@@ -21,7 +21,7 @@ jobs:
           python-version: 3.11
       - name: 'Install requirements'
         run: pip install -r requirements.txt
-      - name: 'reserve'
+      - name: 'reserve1'
         env:
           USERNAME: ${{ secrets.USERNAME }} # 学号
           PASSWORD: ${{ secrets.PASSWORD }} # 密码
