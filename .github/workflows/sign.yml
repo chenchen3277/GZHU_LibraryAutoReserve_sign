@@ -6,7 +6,7 @@ on:
       - main
       - master
   schedule:  # 开启定时需要把这两行前面的“#”删掉
-    - cron: '40 8 * * *'    
+    - cron: '21,30 8,13,18 * * *'  
   workflow_dispatch:
 
 jobs:
