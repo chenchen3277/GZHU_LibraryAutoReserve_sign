@@ -6,7 +6,7 @@ on:
       - main
       - master
   schedule:  # 开启定时需要把这两行前面的“#”删掉
-    - cron: '30 23 * * *'     #运行的时间，时区问题实际运行+8h，例为每天早上6：31分运行
+    - cron: '40 8 * * *'    
   workflow_dispatch:
 
 jobs:
@@ -28,4 +28,4 @@ jobs:
           DEVNAME: ${{ secrets.DEVNAME }}   # 座位号
           PERIODS: ${{ secrets.PERIODS }}   # 时间段
           PUSHPLUS: ${{ secrets.PUSHPLUS }}
-        run: python3 reserve.py
+        run: python3 sign.py
