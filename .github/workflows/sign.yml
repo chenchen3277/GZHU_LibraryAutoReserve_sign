@@ -1,0 +1,30 @@
+name: sign  
+  
+on:  
+  schedule:  
+    - cron: '40 6 * * *'  # 每天UTC时间6点40分运行，注意时区差异  
+  
+jobs:  
+  sign-in:  
+    runs-on: ubuntu-latest  
+    steps:  
+      - name: 'Checkout'  
+        uses: actions/checkout@v3  
+  
+      - name: 'Set up Python'  
+        uses: actions/setup-python@v4  
+        with:  
+          python-version: 3.11  # 确保与你的脚本兼容的Python版本  
+  
+      - name: 'Install requirements'  
+        run: pip install -r requirements.txt  # 假设你的项目有requirements.txt  
+  
+      - name: 'Sign in'  
+        env:  
+          USERNAME: ${{ secrets.USERNAME }}  # 用户名  
+          PASSWORD: ${{ secrets.PASSWORD }}  # 密码  
+          DEVNAME: ${{ secrets.DEVNAME }}    # 座位号或设备名  
+          # 其他可能需要的环境变量  
+        run: python3 sign.py  # 假设你的签到脚本名为sign.py  
+  
+   
