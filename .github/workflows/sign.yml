@@ -1,4 +1,4 @@
-name: reserve
+name: sign
 
 on:
   push:
